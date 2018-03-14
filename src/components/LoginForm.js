@@ -48,6 +48,7 @@ class LoginForm extends Component {
     render() {
         const marginStyle = { marginTop: 15 }
         return(
+            <ScrollView>
             <View style={{backgroundColor:'white', flex: 1}}>
                 <View style={{alignContent:"center"}}>
                     <Image source={require('../../SKILLER-WHALE-logo.png')} style={{width: 120, height: 100, marginTop: 15, marginBottom: 15, alignSelf: 'center'}} />
@@ -71,8 +72,8 @@ class LoginForm extends Component {
                         {this.renderError()}
 
                         {this.renderButton()} 
-
-                        <View style={{marginLeft: 30, marginRight: 30, marginTop:100}}>
+                        
+                        <View style={{marginLeft: 30, marginRight: 30, marginTop:50, marginBottom:20}}>
                             <Bubble style={{marginRight: 50}}>
                                 Hey, We know this app doesn't look great. 
                                 But, this is a very barebones app to see if our idea is any good.
@@ -88,7 +89,7 @@ class LoginForm extends Component {
                         </View>                   
                 </View>
             </View>
-            
+            </ScrollView>
         )
     }
 }
