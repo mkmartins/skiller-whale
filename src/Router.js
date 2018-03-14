@@ -3,10 +3,14 @@ import { Scene, Router, Actions, Stack } from 'react-native-router-flux'
 import LoginForm from './components/LoginForm'
 import Content from './components/Content'
 import { connect } from 'react-redux'
-import { logoutUser } from './actions'
+import { logoutUser, userLoggedIn } from './actions'
 //import UserProfile from './components/UserProfile'
 
 class RouterComponent extends React.Component {
+
+    componentWillMount() {
+        this.props.userLoggedIn()
+    }
 
     logoutUser = () => {
         this.props.logoutUser()
@@ -47,4 +51,4 @@ const styles = {
     }
 }
 
-export default connect(null, { logoutUser })(RouterComponent)
+export default connect(null, { logoutUser, userLoggedIn })(RouterComponent)

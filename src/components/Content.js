@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
-import { Text, View, Image, ScrollView, StyleSheet } from 'react-native'
-import { Button, Switcher, Spinner, Input } from 'nachos-ui'
+import { Text, View, Image, ScrollView, StyleSheet, TextInput, KeyboardAvoidingView } from 'react-native'
+import { Button, Switcher, Spinner } from 'nachos-ui'
 import { connect } from 'react-redux'
 import { pageLoaded } from '../actions'
 import firebase from 'firebase'
@@ -41,7 +41,10 @@ class Content extends Component {
     render() {
         const btnStyle = { margin: 10, borderRadius: 5 }
         return(
-            
+            <KeyboardAvoidingView
+                style={styles.container}
+                behavior="padding"
+            >
             <View style={{backgroundColor:'white'}}>
                 <ScrollView>
                     {this.props.image === "" &&
@@ -72,8 +75,10 @@ class Content extends Component {
                         <Button kind='squared'>
                             What comes to mind?
                         </Button>
-                        <Input
+                        <TextInput
                             height = {100}
+                            multiline={true}
+                            numberOfLines={4}
                             placeholder='What did you like? What can we do better?'
                             value={this.state.comment}
                             onChangeText={value => this.setState({ comment: value })}
@@ -84,6 +89,7 @@ class Content extends Component {
                     </View>
                 </ScrollView>
             </View>
+            </KeyboardAvoidingView>
         )
     }
 }

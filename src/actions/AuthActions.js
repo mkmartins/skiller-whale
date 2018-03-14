@@ -24,6 +24,16 @@ export const passwordChanged = text => {
     }
 }
 
+export const userLoggedIn = () => {
+    return (dispatch) => {
+        firebase.auth().onAuthStateChanged((user) => {
+            if (user) {
+              Actions.main()
+            }
+        })
+    }
+}
+
 export const loginUser = ({ email, password }) => {
     //create a helper method to avoid duplicate code
     return (dispatch) => {
