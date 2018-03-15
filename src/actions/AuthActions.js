@@ -28,7 +28,9 @@ export const userLoggedIn = () => {
     return (dispatch) => {
         firebase.auth().onAuthStateChanged((user) => {
             if (user) {
-              Actions.main()
+                Actions.menu()
+            } else {
+                Actions.auth()
             }
         })
     }
@@ -42,7 +44,7 @@ export const loginUser = ({ email, password }) => {
         firebase.auth().signInWithEmailAndPassword(email, password)
         .then(user => {
             dispatch({type: LOGIN_USER_SUCCESS, payload: user})
-            Actions.main()
+            Actions.menu()
         })
         .catch((error) => {
             console.log(error)
@@ -50,7 +52,7 @@ export const loginUser = ({ email, password }) => {
             firebase.auth().createUserWithEmailAndPassword(email,password)
             .then(user => {
                 dispatch({type: LOGIN_USER_SUCCESS, payload: user})
-                Actions.main()
+                Actions.menu()
             })
             .catch(()=> login_user_fail(dispatch))
         }) 

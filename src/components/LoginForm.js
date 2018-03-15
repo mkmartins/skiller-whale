@@ -48,8 +48,8 @@ class LoginForm extends Component {
     render() {
         const marginStyle = { marginTop: 15 }
         return(
-            <ScrollView>
-            <View style={{backgroundColor:'white', flex: 1}}>
+            <ScrollView style={{backgroundColor:'white', flex: 1}}>
+            <View>
                 <View style={{alignContent:"center"}}>
                     <Image source={require('../../SKILLER-WHALE-logo.png')} style={{width: 120, height: 100, marginTop: 15, marginBottom: 15, alignSelf: 'center'}} />
                 </View>
