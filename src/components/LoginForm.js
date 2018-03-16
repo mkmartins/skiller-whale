@@ -73,7 +73,7 @@ class LoginForm extends Component {
 
                         {this.renderButton()} 
                         
-                        <View style={{marginLeft: 30, marginRight: 30, marginTop:50, marginBottom:20}}>
+                        <View style={styles.bubbleStyle}>
                             <Bubble style={{marginRight: 50}}>
                                 Hey, We know this app doesn't look great. 
                                 But, this is a very barebones app to see if our idea is any good.
@@ -102,7 +102,8 @@ const styles = {
 		marginLeft: 10,
 		marginRight: 10,
         marginTop: 10,
-	}
+    },
+    bubbleStyle: {marginLeft: 30, marginRight: 30, marginTop:50, marginBottom:20}
 };
 
 const mapStateToProps = (state) => {

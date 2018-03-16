@@ -24,9 +24,10 @@ class RouterComponent extends React.Component {
                             component={Splash} 
                             title="Skiller Whale" 
                             initial
+                            hideNavBar
                         />
                     </Scene>
-                    <Scene key="menu">
+                    <Scene key="menu" type="reset" >
                         <Scene
                             key="Menu" 
                             component={Menu} 
