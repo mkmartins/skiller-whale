@@ -1,5 +1,5 @@
 import React from 'react'
-import { Scene, Router, Actions, Stack } from 'react-native-router-flux'
+import { Scene, Router, Stack } from 'react-native-router-flux'
 import LoginForm from './components/LoginForm'
 import Content from './components/Content'
 import Splash from './components/Splash'

@@ -8,7 +8,7 @@
   },
   "dependencies": {
     "axios": "^0.18.0",
-    "firebase": "^4.10.1",
+    "firebase": "^4.11.0",
     "nachos-ui": "^0.1.2",
     "react": "16.2.0",
     "react-native": "0.53.3",
